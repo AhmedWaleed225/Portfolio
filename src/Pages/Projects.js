@@ -52,7 +52,7 @@ const Projects = () => {
 
   return (
     <section className="min-h-screen py-16 px-6 bg-white dark:bg-gray-900 text-black dark:text-white text-center">
-      <h2 className="text-4xl font-extrabold text-blue-600 dark:text-yellow-400 mb-12">
+      <h2 className="text-4xl font-extrabold text-blue-600 dark:text-white mb-12">
         Projects
       </h2>
 

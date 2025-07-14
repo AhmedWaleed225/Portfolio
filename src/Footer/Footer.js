@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="mt-2 flex justify-center gap-4">
           <a
             href="mailto:ahmedwaleed1999@yahoo.com"
-            className="text-blue-600 dark:text-yellow-400 hover:underline text-sm"
+            className="text-blue-600 dark:text-white hover:underline text-sm"
           >
             Email
           </a>
@@ -18,7 +18,7 @@ const Footer = () => {
             href="https://www.linkedin.com/in/ahmedwaleed1/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-600 dark:text-yellow-400 hover:underline text-sm"
+            className="text-blue-600 dark:text-white hover:underline text-sm"
           >
             LinkedIn
           </a>
@@ -26,7 +26,7 @@ const Footer = () => {
             href="https://github.com/AhmedWaleed225"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-600 dark:text-yellow-400 hover:underline text-sm"
+            className="text-blue-600 dark:text-white hover:underline text-sm"
           >
             GitHub
           </a>

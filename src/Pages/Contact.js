@@ -3,7 +3,9 @@ import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
 const Contact = () => {
   return (
     <section className="min-h-screen py-16   flex flex-col justify-center items-center text-center px-6 bg-white dark:bg-gray-900 text-black dark:text-white">
-      <h2 className="text-4xl font-bold text-blue-600 mb-4">Contact Me</h2>
+      <h2 className="text-4xl font-bold text-blue-600 dark:text-white mb-4">
+        Contact Me
+      </h2>
       <p className="text-lg text-gray-700 mb-6 max-w-xl mx-auto dark:text-white">
         I'm open to freelance work, collaborations, or just a friendly chat! You
         can reach out to me directly via email or connect through my social

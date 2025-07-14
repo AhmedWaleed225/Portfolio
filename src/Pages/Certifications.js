@@ -46,7 +46,7 @@ const Certifications = () => {
   return (
     <section className="min-h-screen py-16 px-6 bg-white dark:bg-gray-900 text-black dark:text-white">
       <motion.h2
-        className="text-4xl font-bold text-blue-600 dark:text-yellow-400 mb-12 text-center"
+        className="text-4xl font-bold text-blue-600 dark:text-white mb-12 text-center"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
