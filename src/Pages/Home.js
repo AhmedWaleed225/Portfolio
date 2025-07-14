@@ -47,6 +47,8 @@ const Home = () => {
         id="home"
         className="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-white dark:bg-gray-900 text-black dark:text-white"
       >
+        <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-blue-100 dark:from-gray-800 to-transparent z-0" />
+
         {/* Profile Image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
