@@ -1,10 +1,45 @@
+// 📁 src/pages/Home.js
 import React from "react";
 import { Link, Element } from "react-scroll";
 import { FaArrowDown } from "react-icons/fa";
 import { motion } from "framer-motion";
+import Tilt from "react-parallax-tilt";
+import Slider from "react-slick";
 import Photo from "../Images/Photo.jpg";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 const Home = () => {
+  const reviews = [
+    {
+      name: "John Doe",
+      feedback:
+        "Ahmed was amazing to work with. Delivered the project ahead of time with clean and maintainable code!",
+    },
+    {
+      name: "Emily Smith",
+      feedback:
+        "Highly professional and skilled developer. He brought our vision to life beautifully.",
+    },
+    {
+      name: "Michael Brown",
+      feedback:
+        "Great communication and solid technical skills. Would definitely work with Ahmed again.",
+    },
+  ];
+
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+  };
+
   return (
     <>
       {/* Home Hero Section */}
@@ -14,16 +49,19 @@ const Home = () => {
       >
         {/* Profile Image */}
         <motion.div
-          className="w-40 h-40 mb-6 rounded-full overflow-hidden shadow-lg"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          <img
-            src={Photo}
-            alt="Ahmed Waleed Portrait"
-            className="w-full h-full object-cover"
-          />
+          <Tilt>
+            <div className="w-40 h-40 mb-6 rounded-full overflow-hidden shadow-lg">
+              <img
+                src={Photo}
+                alt="Ahmed Waleed Portrait"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </Tilt>
         </motion.div>
 
         {/* Heading */}
@@ -107,7 +145,7 @@ const Home = () => {
             smooth={true}
             duration={600}
             offset={-60}
-            className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-blue-700 transition cursor-pointer"
+            className="inline-flex items-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-md text-lg font-medium hover:from-blue-700 hover:to-purple-700 transition cursor-pointer"
           >
             View My Work <FaArrowDown className="ml-2" />
           </Link>
@@ -129,7 +167,7 @@ const Home = () => {
           <div className="grid gap-8 md:grid-cols-3 text-left max-w-6xl mx-auto">
             {/* Project 1 */}
             <motion.div
-              className="bg-gray-100 rounded-lg p-6 shadow hover:shadow-md transition"
+              className="bg-gradient-to-br from-gray-100 to-white rounded-lg p-6 shadow hover:shadow-md transition"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -146,7 +184,7 @@ const Home = () => {
 
             {/* Project 2 */}
             <motion.div
-              className="bg-gray-100 rounded-lg p-6 shadow hover:shadow-md transition"
+              className="bg-gradient-to-br from-gray-100 to-white rounded-lg p-6 shadow hover:shadow-md transition"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
@@ -163,7 +201,7 @@ const Home = () => {
 
             {/* Project 3 */}
             <motion.div
-              className="bg-gray-100 rounded-lg p-6 shadow hover:shadow-md transition"
+              className="bg-gradient-to-br from-gray-100 to-white rounded-lg p-6 shadow hover:shadow-md transition"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
@@ -179,6 +217,35 @@ const Home = () => {
           </div>
         </section>
       </Element>
+
+      {/* Testimonials / Reviews Section */}
+      <section className="py-16 px-6 bg-blue-50 dark:bg-gray-800 text-center">
+        <motion.h2
+          className="text-3xl font-bold text-blue-600 dark:text-yellow-400 mb-8"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          What Clients Say
+        </motion.h2>
+
+        <div className="max-w-xl mx-auto">
+          <Slider {...sliderSettings}>
+            {reviews.map((review, index) => (
+              <div key={index} className="px-4">
+                <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow">
+                  <p className="text-lg italic text-gray-800 dark:text-gray-200">
+                    "{review.feedback}"
+                  </p>
+                  <p className="mt-4 font-semibold text-blue-600 dark:text-yellow-400">
+                    — {review.name}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </section>
     </>
   );
 };

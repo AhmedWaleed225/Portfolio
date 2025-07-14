@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactPizza1 from "../Images/ReactPizza1.png";
 import TheWildOasis1 from "../Images/TheWildOasis1.png";
 import WorldWise1 from "../Images/WorldWise1.png";
@@ -9,12 +9,18 @@ import Natours from "../Videos/Natours.mp4";
 import Natours1 from "../Images/Natours.png";
 
 const Projects = () => {
+  const [showVideo, setShowVideo] = useState({});
+
+  const toggleVideo = (index) => {
+    setShowVideo((prev) => ({ ...prev, [index]: !prev[index] }));
+  };
+
   const projects = [
     {
       title: "The Wild Oasis",
       stack: ["Next JS", "Tailwind CSS", "Supabase"],
       description:
-        "Wildlife Oasis is a comprehensive website designed for a resort featuring a range of unique, nature-inspired cabins. The site includes a dashboard for managing and displaying all resort bookings, cabin details, and a user authentication system. The project aims to create a user-friendly interface for both staff and visitors, simplifying the booking process and providing convenient access to essential resort information.",
+        "Wildlife Oasis is a dashboard-driven resort site with booking management, cabin listings, and secure user authentication. Built with modern tools for seamless user experience.",
       image: TheWildOasis1,
       video: TheWildOasis,
     },
@@ -22,7 +28,7 @@ const Projects = () => {
       title: "Natours",
       stack: ["Next.js", "Express", "Mongo DB", "Pug"],
       description:
-        "Natours is a full-stack tour booking web application built with Node.js, Express, MongoDB, and Pug. It features a RESTful API with advanced authentication using JWT, role-based access control, and secure cookie handling. Users can sign up, log in, update their profiles, and book exciting tours. The app includes backend features like data validation, password reset via email, and middleware for route protection.",
+        "Full-stack tour booking platform with REST API, JWT authentication, role-based control, secure cookie sessions, and admin panel.",
       image: Natours1,
       video: Natours,
     },
@@ -30,7 +36,7 @@ const Projects = () => {
       title: "The React Pizza",
       stack: ["React", "Tailwind CSS", "Node JS"],
       description:
-        "This is a pizza store in which you can enter your username and start browsing the available pizza menu. The app allows you to add pizzas to your shopping cart, and you can access the cart to make adjustments by adding or removing pizzas. The app also includes a priority option for orders, which you can select if you want to expedite your order.",
+        "Pizza shop SPA where users can browse menus, manage cart, and place priority orders. Simple yet functional interface for small business use.",
       image: ReactPizza1,
       video: FastReactPizza,
     },
@@ -38,41 +44,63 @@ const Projects = () => {
       title: "World Wise",
       stack: ["React", "Vite", "Tailwind CSS", "Context API"],
       description:
-        "The World Wise app allows you to explore and record the places you’ve visited around the world. You can log in with your account to access a world map, where you can select locations. The app automatically fetches the country and city names using an API. You can then add a personal description and save the city.",
+        "Interactive map app to log visited cities with auto-location API, custom notes, and visually appealing UX built with Vite & Context.",
       image: WorldWise1,
       video: WorldWise,
     },
   ];
 
   return (
-    <section className="min-h-screen py-16 flex flex-col justify-center items-center text-center px-6 bg-white dark:bg-gray-900 text-black dark:text-white">
-      <h2 className="text-4xl font-bold text-blue-600 mb-12">Projects</h2>
-      <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+    <section className="min-h-screen py-16 px-6 bg-white dark:bg-gray-900 text-black dark:text-white text-center">
+      <h2 className="text-4xl font-extrabold text-blue-600 dark:text-yellow-400 mb-12">
+        Projects
+      </h2>
+
+      <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="bg-white p-6 rounded-lg shadow-md text-left"
+            className="bg-gradient-to-br from-white to-blue-50 dark:from-gray-800 dark:to-gray-700 p-6 rounded-2xl shadow-lg transition transform hover:-translate-y-1"
           >
-            <h3 className="text-2xl font-semibold text-blue-600 mb-2">
+            <h3 className="text-2xl font-bold text-blue-700 dark:text-yellow-300 mb-3">
               {project.title}
             </h3>
-            <div className="flex flex-wrap gap-2 mb-3">
+
+            <div className="flex flex-wrap gap-2 mb-4">
               {project.stack.map((tech, i) => (
                 <span
                   key={i}
-                  className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium shadow"
+                  className="px-3 py-1 bg-blue-100 dark:bg-gray-600 text-blue-700 dark:text-white rounded-full text-sm font-medium shadow"
                 >
                   {tech}
                 </span>
               ))}
             </div>
-            <p className="text-gray-700 mb-4">{project.description}</p>
+
+            <p className="text-gray-700 dark:text-gray-300 mb-4">
+              {project.description}
+            </p>
+
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-90 object-cover rounded-lg mb-3 shadow-sm"
+              className="w-full h-70 object-cover rounded-lg mb-4 shadow-md"
             />
-            <video src={project.video} controls className="w-full rounded" />
+
+            <button
+              onClick={() => toggleVideo(index)}
+              className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md mb-3 transition"
+            >
+              {showVideo[index] ? "Hide Demo" : "Watch Demo"}
+            </button>
+
+            {showVideo[index] && (
+              <video
+                src={project.video}
+                controls
+                className="w-full rounded-xl mt-3 shadow-md"
+              />
+            )}
           </div>
         ))}
       </div>
