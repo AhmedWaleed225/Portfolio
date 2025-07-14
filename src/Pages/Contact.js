@@ -1,13 +1,20 @@
 import React from "react";
 import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
+import { motion } from "framer-motion";
+
 const Contact = () => {
   return (
-    <section className="min-h-screen py-16   flex flex-col justify-center items-center text-center px-6 bg-white dark:bg-gray-900 text-black dark:text-white">
+    <section className="relative min-h-screen py-16 px-6 flex flex-col justify-center items-center text-center bg-white dark:bg-gray-900 text-black dark:text-white">
       <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-blue-100 dark:from-gray-800 to-transparent z-0" />
 
-      <h2 className="text-4xl font-bold text-blue-600 dark:text-white mb-4">
+      <motion.h2
+        className="text-4xl font-bold text-blue-600 dark:text-white mb-6 z-10"
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         Contact Me
-      </h2>
+      </motion.h2>
       <p className="text-lg text-gray-700 mb-6 max-w-xl mx-auto dark:text-white">
         I'm open to freelance work, collaborations, or just a friendly chat! You
         can reach out to me directly via email or connect through my social

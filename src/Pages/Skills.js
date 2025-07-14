@@ -75,12 +75,12 @@ const skills = [
 
 const Skills = () => {
   return (
-    <section className="min-h-screen py-16 px-6 text-center bg-white dark:bg-gray-900 text-black dark:text-white flex flex-col items-center">
+    <section className="relative min-h-screen py-16 px-6 flex flex-col justify-center items-center text-center bg-white dark:bg-gray-900 text-black dark:text-white">
       <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-blue-100 dark:from-gray-800 to-transparent z-0" />
 
       <motion.h2
-        className="text-4xl font-bold text-blue-600 dark:text-white mb-10"
-        initial={{ opacity: 0, y: -20 }}
+        className="text-4xl font-bold text-blue-600 dark:text-white mb-6 z-10"
+        initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
