@@ -5,16 +5,15 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative min-h-screen py-16 px-6 flex flex-col justify-center items-center text-center bg-white dark:bg-gray-900 text-black dark:text-white"
+      className="relative min-h-screen py-16 px-4 sm:px-6 flex flex-col justify-center items-center text-center bg-white dark:bg-gray-900 text-black dark:text-white"
     >
       {/* Gradient Background Divider */}
-      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-blue-100 dark:from-gray-800 to-transparent z-0" />
+      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-blue-100 dark:from-gray-800 to-transparent z-0 pointer-events-none" />
 
-      {/* Section Heading */}
       <motion.h2
-        className="text-4xl font-bold text-blue-600 dark:text-white mb-6 z-10"
+        className="text-3xl sm:text-4xl font-bold text-blue-600 dark:text-white mb-4 sm:mb-6 z-10"
         initial={{ opacity: 0, y: -30 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }} // changed from whileInView
         transition={{ duration: 0.6 }}
       >
         About Me
@@ -22,7 +21,7 @@ const About = () => {
 
       {/* Subheading */}
       <motion.h3
-        className="text-2xl font-semibold text-gray-800 dark:text-gray-300 mb-4 z-10"
+        className="text-lg sm:text-2xl font-semibold text-gray-800 dark:text-gray-300 mb-4 z-10 px-2"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -32,7 +31,7 @@ const About = () => {
 
       {/* Highlight Boxes */}
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 text-left bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md max-w-4xl z-10"
+        className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 text-left bg-gray-50 dark:bg-gray-800 p-5 sm:p-6 rounded-lg shadow-md max-w-4xl w-full z-10"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
@@ -55,7 +54,7 @@ const About = () => {
 
       {/* Description */}
       <motion.p
-        className="max-w-3xl text-gray-700 text-lg leading-7 mb-8 dark:text-white z-10"
+        className="max-w-3xl px-2 text-gray-700 text-base sm:text-lg leading-7 mb-8 dark:text-white z-10"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
@@ -84,7 +83,7 @@ const About = () => {
 
       {/* Tech Tags */}
       <motion.div
-        className="flex flex-wrap justify-center gap-2 mb-6 z-10"
+        className="flex flex-wrap justify-center gap-2 mb-6 z-10 px-2"
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.4 }}
@@ -110,7 +109,7 @@ const About = () => {
 
       {/* Certificates as Buttons */}
       <motion.div
-        className="flex flex-col sm:flex-row gap-4 justify-center z-10"
+        className="flex flex-col sm:flex-row gap-4 justify-center z-10 px-2"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.5 }}
@@ -119,7 +118,7 @@ const About = () => {
           href="https://www.credly.com/badges/82e8f9f8-8976-4170-9fec-4c2c51a377f6/public_url"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md transition"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md text-sm sm:text-base transition"
         >
           Meta Front-End Certificate
         </a>
@@ -127,7 +126,7 @@ const About = () => {
           href="https://www.credly.com/badges/9f4c3b15-b8b6-4997-83c5-f619bbfc7d1f/public_url"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-md transition"
+          className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-md text-sm sm:text-base transition"
         >
           PMP Certification
         </a>

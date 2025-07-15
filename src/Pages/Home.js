@@ -45,7 +45,7 @@ const Home = () => {
       {/* Home Hero Section */}
       <section
         id="home"
-        className="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-white dark:bg-gray-900 text-black dark:text-white"
+        className="min-h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 bg-white dark:bg-gray-900 text-black dark:text-white"
       >
         <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-blue-100 dark:from-gray-800 to-transparent z-0" />
 
@@ -56,7 +56,7 @@ const Home = () => {
           transition={{ duration: 1, ease: "easeOut" }}
         >
           <Tilt>
-            <div className="w-40 h-40 mb-6 rounded-full overflow-hidden shadow-lg">
+            <div className="w-32 h-32 sm:w-40 sm:h-40 mb-6 rounded-full overflow-hidden shadow-lg">
               <img
                 src={Photo}
                 alt="Ahmed Waleed Portrait"
@@ -68,7 +68,7 @@ const Home = () => {
 
         {/* Heading */}
         <motion.h1
-          className="text-4xl md:text-5xl font-bold text-blue-600 mb-4"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-600 mb-4"
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -78,7 +78,7 @@ const Home = () => {
 
         {/* Introduction */}
         <motion.p
-          className="text-lg md:text-xl text-gray-700 max-w-2xl mb-6 dark:text-white"
+          className="text-base sm:text-lg md:text-xl text-gray-700 max-w-xl sm:max-w-2xl mb-6 dark:text-white"
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
@@ -92,7 +92,7 @@ const Home = () => {
 
         {/* What I Do - Services */}
         <motion.div
-          className="grid sm:grid-cols-2 gap-4 text-gray-600 text-md mb-8 dark:text-white"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-600 text-sm sm:text-base mb-8 dark:text-white"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7 }}
@@ -105,35 +105,28 @@ const Home = () => {
 
         {/* Tech Stack Section */}
         <motion.div
-          className="flex flex-wrap justify-center gap-3 mb-8"
+          className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7 }}
         >
-          <span className="px-4 py-2 rounded-full bg-sky-500 text-white font-medium shadow-md">
-            ⚛️ React
-          </span>
-          <span className="px-4 py-2 rounded-full bg-green-600 text-white font-medium shadow-md">
-            🌿 Node.js
-          </span>
-          <span className="px-4 py-2 rounded-full bg-gray-700 text-white font-medium shadow-md">
-            🖥 Express.js
-          </span>
-          <span className="px-4 py-2 rounded-full bg-emerald-600 text-white font-medium shadow-md">
-            🍃 MongoDB
-          </span>
-          <span className="px-4 py-2 rounded-full bg-black text-white font-medium shadow-md">
-            🧠 Next.js
-          </span>
-          <span className="px-4 py-2 rounded-full bg-yellow-500 text-white font-medium shadow-md">
-            📜 JavaScript
-          </span>
-          <span className="px-4 py-2 rounded-full bg-blue-400 text-white font-medium shadow-md">
-            🎨 Tailwind CSS
-          </span>
-          <span className="px-4 py-2 rounded-full bg-gray-800 text-white font-medium shadow-md">
-            🔧 Git & GitHub
-          </span>
+          {[
+            ["⚛️ React", "bg-sky-500"],
+            ["🌿 Node.js", "bg-green-600"],
+            ["🖥 Express.js", "bg-gray-700"],
+            ["🍃 MongoDB", "bg-emerald-600"],
+            ["🧠 Next.js", "bg-black"],
+            ["📜 JavaScript", "bg-yellow-500"],
+            ["🎨 Tailwind CSS", "bg-blue-400"],
+            ["🔧 Git & GitHub", "bg-gray-800"],
+          ].map(([label, color], i) => (
+            <span
+              key={i}
+              className={`px-3 py-1 sm:px-4 sm:py-2 rounded-full ${color} text-white font-medium shadow-md text-sm sm:text-base`}
+            >
+              {label}
+            </span>
+          ))}
         </motion.div>
 
         {/* CTA Button */}
@@ -147,7 +140,7 @@ const Home = () => {
             smooth={true}
             duration={600}
             offset={-60}
-            className="inline-flex items-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-md text-lg font-medium hover:from-blue-700 hover:to-purple-700 transition cursor-pointer"
+            className="inline-flex items-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-md text-base sm:text-lg font-medium hover:from-blue-700 hover:to-purple-700 transition cursor-pointer"
           >
             View My Work <FaArrowDown className="ml-2" />
           </Link>
@@ -156,9 +149,9 @@ const Home = () => {
 
       {/* Project Briefs Section */}
       <Element name="project-briefs">
-        <section className="bg-white py-16 px-6 text-center dark:bg-gray-900 dark:text-white">
+        <section className="bg-white py-16 px-4 sm:px-6 text-center dark:bg-gray-900 dark:text-white">
           <motion.h2
-            className="text-3xl font-bold text-blue-600 mb-8"
+            className="text-2xl sm:text-3xl font-bold text-blue-600 mb-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -166,64 +159,38 @@ const Home = () => {
             Projects Preview
           </motion.h2>
 
-          <div className="grid gap-8 md:grid-cols-3 text-left max-w-6xl mx-auto">
-            {/* Project 1 */}
-            <motion.div
-              className="bg-gradient-to-br from-gray-100 to-white rounded-lg p-6 shadow hover:shadow-md transition"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              <h3 className="text-xl font-semibold mb-2 text-blue-700">
-                🧭 Natours
-              </h3>
-              <p className="text-gray-700 text-sm">
-                Full-stack tour booking app using Node.js, Express, MongoDB, and
-                Pug. Features user authentication, tour booking, and admin
-                panel.
-              </p>
-            </motion.div>
-
-            {/* Project 2 */}
-            <motion.div
-              className="bg-gradient-to-br from-gray-100 to-white rounded-lg p-6 shadow hover:shadow-md transition"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-            >
-              <h3 className="text-xl font-semibold mb-2 text-blue-700">
-                🛒 MERN eCommerce
-              </h3>
-              <p className="text-gray-700 text-sm">
-                A fully functional eCommerce web app built with React, Node.js,
-                MongoDB & Express. Includes user auth, cart, checkout & admin
-                dashboard.
-              </p>
-            </motion.div>
-
-            {/* Project 3 */}
-            <motion.div
-              className="bg-gradient-to-br from-gray-100 to-white rounded-lg p-6 shadow hover:shadow-md transition"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-            >
-              <h3 className="text-xl font-semibold mb-2 text-blue-700">
-                🧾 Portfolio Website
-              </h3>
-              <p className="text-gray-700 text-sm">
-                The website you're viewing now! Built with React, Tailwind CSS,
-                Framer Motion, and React Router — responsive and animated.
-              </p>
-            </motion.div>
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-3 text-left max-w-6xl mx-auto">
+            {[1, 2, 3].map((_, i) => (
+              <motion.div
+                key={i}
+                className="bg-gradient-to-br from-gray-100 to-white rounded-lg p-5 sm:p-6 shadow hover:shadow-md transition"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 * (i + 1) }}
+              >
+                <h3 className="text-lg sm:text-xl font-semibold mb-2 text-blue-700">
+                  {i === 0 && "🧭 Natours"}
+                  {i === 1 && "🛒 MERN eCommerce"}
+                  {i === 2 && "🧾 Portfolio Website"}
+                </h3>
+                <p className="text-gray-700 text-sm sm:text-base">
+                  {i === 0 &&
+                    "Full-stack tour booking app using Node.js, Express, MongoDB, and Pug. Features user authentication, tour booking, and admin panel."}
+                  {i === 1 &&
+                    "A fully functional eCommerce web app built with React, Node.js, MongoDB & Express. Includes user auth, cart, checkout & admin dashboard."}
+                  {i === 2 &&
+                    "The website you're viewing now! Built with React, Tailwind CSS, Framer Motion, and React Router — responsive and animated."}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </section>
       </Element>
 
       {/* Testimonials / Reviews Section */}
-      <section className="py-16 px-6 bg-blue-50 dark:bg-gray-800 text-center">
+      <section className="py-16 px-4 sm:px-6 bg-blue-50 dark:bg-gray-800 text-center">
         <motion.h2
-          className="text-3xl font-bold text-blue-600 dark:text-yellow-400 mb-8"
+          className="text-2xl sm:text-3xl font-bold text-blue-600 dark:text-yellow-400 mb-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -231,15 +198,15 @@ const Home = () => {
           What Clients Say
         </motion.h2>
 
-        <div className="max-w-xl mx-auto">
+        <div className="max-w-md sm:max-w-xl mx-auto">
           <Slider {...sliderSettings}>
             {reviews.map((review, index) => (
-              <div key={index} className="px-4">
-                <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow">
-                  <p className="text-lg italic text-gray-800 dark:text-gray-200">
+              <div key={index} className="px-2 sm:px-4">
+                <div className="bg-white dark:bg-gray-700 p-5 sm:p-6 rounded-lg shadow">
+                  <p className="text-base sm:text-lg italic text-gray-800 dark:text-gray-200">
                     "{review.feedback}"
                   </p>
-                  <p className="mt-4 font-semibold text-blue-600 dark:text-yellow-400">
+                  <p className="mt-4 font-semibold text-blue-600 dark:text-yellow-400 text-sm sm:text-base">
                     — {review.name}
                   </p>
                 </div>
