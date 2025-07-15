@@ -11,7 +11,7 @@ const About = () => {
       <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-blue-100 dark:from-gray-800 to-transparent z-0 pointer-events-none" />
 
       <motion.h2
-        className="text-3xl sm:text-4xl font-bold text-blue-600 dark:text-white mb-4 sm:mb-6 z-10"
+        className="text-4xl font-bold text-blue-600 dark:text-white mb-6 z-10"
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }} // changed from whileInView
         transition={{ duration: 0.6 }}
