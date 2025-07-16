@@ -60,7 +60,7 @@ const Home = () => {
               <img
                 src={Photo}
                 alt="Ahmed Waleed Portrait"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-[90%_20%]"
               />
             </div>
           </Tilt>
