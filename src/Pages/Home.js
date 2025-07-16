@@ -191,12 +191,12 @@ const Home = () => {
                   )}
                   {i === 2 && (
                     <a
-                      href="https://mern-ecommerce-site.vercel.app"
+                      href="https://use-popcorn-silk-three.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:underline"
                     >
-                      🛒 E-Commerce Website
+                      🍿 Use-Popcorn Website
                     </a>
                   )}
                 </h3>
@@ -207,7 +207,7 @@ const Home = () => {
                   {i === 1 &&
                     "An interactive map app where users can log visited cities. Built with React, Vite, and Context API — includes geolocation and place tagging."}
                   {i === 2 &&
-                    "A responsive eCommerce store built with MERN stack. Features include product browsing, user authentication, cart, checkout, and admin panel."}
+                    "A responsive web app built with React.js and Tailwind CSS that lets users search movies via the IMDB API, rate them, and manage a personalized watched list."}
                 </p>
               </motion.div>
             ))}
