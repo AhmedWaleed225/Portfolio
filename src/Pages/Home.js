@@ -169,17 +169,45 @@ const Home = () => {
                 transition={{ delay: 0.2 * (i + 1) }}
               >
                 <h3 className="text-lg sm:text-xl font-semibold mb-2 text-blue-700">
-                  {i === 0 && "🧭 Natours"}
-                  {i === 1 && "🛒 MERN eCommerce"}
-                  {i === 2 && "🧾 Portfolio Website"}
+                  {i === 0 && (
+                    <a
+                      href="https://the-react-pizza.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      🍕 React-Pizza Store
+                    </a>
+                  )}
+                  {i === 1 && (
+                    <a
+                      href="https://worldwise-app.vercel.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      🌍 World Wise
+                    </a>
+                  )}
+                  {i === 2 && (
+                    <a
+                      href="https://mern-ecommerce-site.vercel.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      🛒 E-Commerce Website
+                    </a>
+                  )}
                 </h3>
+
                 <p className="text-gray-700 text-sm sm:text-base">
                   {i === 0 &&
-                    "Full-stack tour booking app using Node.js, Express, MongoDB, and Pug. Features user authentication, tour booking, and admin panel."}
+                    "A pizza ordering app built with React and Tailwind. Users can add pizzas to the cart, adjust quantities, and place priority orders."}
                   {i === 1 &&
-                    "A fully functional eCommerce web app built with React, Node.js, MongoDB & Express. Includes user auth, cart, checkout & admin dashboard."}
+                    "An interactive map app where users can log visited cities. Built with React, Vite, and Context API — includes geolocation and place tagging."}
                   {i === 2 &&
-                    "The website you're viewing now! Built with React, Tailwind CSS, Framer Motion, and React Router — responsive and animated."}
+                    "A responsive eCommerce store built with MERN stack. Features include product browsing, user authentication, cart, checkout, and admin panel."}
                 </p>
               </motion.div>
             ))}
